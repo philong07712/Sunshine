@@ -10,7 +10,7 @@
         android:padding="5dp">
 
         <ImageView
-            android:id="@+id/imageView_icon"
+            android:id="@+id/imageView_td_icon"
             android:layout_width="54dp"
             android:layout_height="fill_parent"
             android:layout_weight="0"
@@ -29,7 +29,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Day"
-                android:textColor="@android:color/black"
+                android:textColor="@color/colorTextDark"
                 android:textSize="18sp" />
 
             <TextView
@@ -37,7 +37,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="weather kind" />
+                android:text="weather kind"
+                android:textColor="@color/colorText" />
         </LinearLayout>
 
         <TextView
@@ -47,6 +48,7 @@
             android:layout_weight="0"
             android:padding="5dp"
             android:text="maxTemp"
+            android:textColor="@color/colorTextDark"
             android:textSize="24sp" />
 
         <TextView
@@ -56,6 +58,7 @@
             android:layout_weight="0"
             android:padding="5dp"
             android:text="lowTemp"
+            android:textColor="@color/colorText"
             android:textSize="24sp" />
     </LinearLayout>
 </RelativeLayout>

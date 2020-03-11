@@ -2,12 +2,10 @@ package com.example.sunshine;
 
 import android.app.Activity;
 import android.content.Context;
-import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -55,7 +53,7 @@ public class CustomAdapter extends BaseAdapter {
         {
             viewHolder = new ViewHolder();
             view = layoutInflater.inflate(R.layout.item_row, null);
-            viewHolder.image = (ImageView) view.findViewById(R.id.imageView_icon);
+            viewHolder.image = (ImageView) view.findViewById(R.id.imageView_td_icon);
             viewHolder.tv_day = (TextView) view.findViewById(R.id.textView_day);
             viewHolder.tv_kind = (TextView) view.findViewById(R.id.textView_itemKind);
             viewHolder.tv_lowTemp = (TextView) view.findViewById(R.id.textView2_lowTemp);

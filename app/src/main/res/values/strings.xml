@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Sunshine</string>
+    <string name="textView_td">Today, July 1</string>
+    <string name="textView_text_td_max">20</string>
+    <string name="textView_text_td_low">12</string>
+    <string name="textView_text_td_kind">Cloudy</string>
 </resources>
