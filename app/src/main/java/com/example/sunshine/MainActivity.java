@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     CustomAdapter customAdapter;
     ArrayList<DataModel> dataModelArrayList = new ArrayList<DataModel>();
     ArrayList<JSONObject> list_data = new ArrayList<JSONObject>();
+    ArrayList<String> list_lowTemp = new ArrayList<String>();
     // all data
     private JSONObject mainObject;
     private static final String TAG = "MainActivity Logcat";
@@ -82,7 +83,12 @@ public class MainActivity extends AppCompatActivity {
                 {
                     list_data.add(dataList.getJSONObject(i));
                 }
+                if (time.contains("00:00:00"))
+                {
+                    list_lowTemp.add(dataList.getJSONObject(i).getJSONObject("main").getString("temp_min"));
+                }
             }
+            Log.d(TAG, Integer.toString(list_lowTemp.size()));
             // set data to the list
             for (int i = 0; i < list_data.size(); i++)
             {
@@ -105,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
                 weather_kind = weather.getString("description");
                 // init data for max temp
                 String maxTempString = list_data.get(i).getJSONObject("main").getString("temp_max");
-                String minTempString = list_data.get(i).getJSONObject("main").getString("temp_min");
+                String minTempString = list_lowTemp.get(i);
                 maxTemp = Integer.parseInt(convertTemp(maxTempString));
                 lowTemp = Integer.parseInt(convertTemp(minTempString));
                 DataModel data = new DataModel(resIdIcon, day, weather_kind,

@@ -11,15 +11,15 @@
 
         <ImageView
             android:id="@+id/imageView_td_icon"
-            android:layout_width="54dp"
-            android:layout_height="fill_parent"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_weight="0"
             android:padding="3dp"
             app:srcCompat="@drawable/sun" />
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:layout_weight="1"
             android:orientation="vertical">
 
@@ -28,17 +28,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/roboto_condensed_regular"
                 android:text="Day"
                 android:textColor="@color/colorTextDark"
-                android:textSize="18sp" />
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/textView_itemKind"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/roboto_condensed_regular"
                 android:text="weather kind"
-                android:textColor="@color/colorText" />
+                android:textColor="@color/colorText"
+                android:textSize="24sp" />
         </LinearLayout>
 
         <TextView
@@ -46,20 +49,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0"
+            android:fontFamily="@font/roboto_condensed_regular"
             android:padding="5dp"
             android:text="maxTemp"
             android:textColor="@color/colorTextDark"
-            android:textSize="24sp" />
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/textView2_lowTemp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0"
+            android:fontFamily="@font/roboto_condensed_regular"
+            android:lineSpacingExtra="0sp"
             android:padding="5dp"
             android:text="lowTemp"
             android:textColor="@color/colorText"
-            android:textSize="24sp" />
+            android:textSize="30sp" />
     </LinearLayout>
 </RelativeLayout>
 <!--<RelativeLayout-->

@@ -11,7 +11,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="7"
+        android:layout_weight="6"
         android:background="@color/colorPrimary"
         android:orientation="vertical">
 
@@ -20,9 +20,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:fontFamily="@font/roboto_condensed_regular"
             android:text="@string/textView_td"
             android:textColor="@color/colorTextBoard"
-            android:textSize="18sp"
+            android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -37,15 +38,16 @@
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
-            android:gravity="center"
+            android:fontFamily="@font/roboto_condensed_regular"
+            android:gravity="center_horizontal|top"
             android:text="@string/textView_text_td_max"
             android:textColor="@color/colorTextBoard"
-            android:textSize="42sp"
+            android:textSize="48sp"
             app:layout_constraintBottom_toTopOf="@+id/textView_td_low"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline"
             app:layout_constraintTop_toBottomOf="@+id/textView_td"
-            app:layout_constraintVertical_weight="2" />
+            app:layout_constraintVertical_weight="3" />
 
         <TextView
             android:id="@+id/textView_td_low"
@@ -57,15 +59,16 @@
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginBottom="16dp"
-            android:gravity="center"
+            android:fontFamily="@font/roboto_condensed_regular"
+            android:gravity="center_horizontal|top"
             android:text="@string/textView_text_td_low"
             android:textColor="@color/colorTextBoard"
-            android:textSize="24sp"
+            android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline"
             app:layout_constraintTop_toBottomOf="@+id/textView_td_max"
-            app:layout_constraintVertical_weight="1" />
+            app:layout_constraintVertical_weight="2" />
 
         <ImageView
             android:id="@+id/imageView_td_icon"
@@ -73,10 +76,8 @@
             android:layout_height="0dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
             android:layout_marginEnd="24dp"
             android:layout_marginRight="24dp"
-            android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toTopOf="@+id/textView_td_kind"
             app:layout_constraintEnd_toStartOf="@+id/guideline"
             app:layout_constraintStart_toStartOf="parent"
@@ -94,10 +95,11 @@
             android:layout_marginEnd="24dp"
             android:layout_marginRight="24dp"
             android:layout_marginBottom="16dp"
+            android:fontFamily="@font/roboto_condensed_regular"
             android:gravity="center"
             android:text="@string/textView_text_td_kind"
             android:textColor="@color/colorTextBoard"
-            android:textSize="18sp"
+            android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/guideline"
             app:layout_constraintStart_toStartOf="parent"
@@ -117,7 +119,7 @@
         android:id="@+id/layout_bottom"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="3"
+        android:layout_weight="4"
         android:background="@color/colorBackgroundList">
 
         <ListView
