@@ -51,6 +51,14 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Object o = parent.getItemAtPosition(position);
                 Intent intent = new Intent(getApplicationContext(), activity_detail.class);
+                // get Data from dataModelist
+                JSONObject item_data = dataModelArrayList.get(position).getData();
+                intent.putExtra("data", item_data.toString());
+                intent.putExtra("icon", dataModelArrayList.get(position).getImage());
+                intent.putExtra("kind", dataModelArrayList.get(position).getKindOfWeather());
+                intent.putExtra("day", dataModelArrayList.get(position).getDay());
+                intent.putExtra("MaxTemp", dataModelArrayList.get(position).getMaxTemp());
+                intent.putExtra("LowTemp", dataModelArrayList.get(position).getLowTemp());
                 startActivity(intent);
             }
         });
@@ -67,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             JSONArray dataList = mainObject.getJSONArray("list");
             // get All data from api
-            for (int i = 0; i < dataList.length(); i++)
+            for (int i = 1; i < dataList.length(); i++)
             {
                 String time = dataList.getJSONObject(i).getString("dt_txt");
                 if (time.contains("09:00:00"))
@@ -101,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
                 maxTemp = Integer.parseInt(convertTemp(maxTempString));
                 lowTemp = Integer.parseInt(convertTemp(minTempString));
                 DataModel data = new DataModel(resIdIcon, day, weather_kind,
-                        maxTemp, lowTemp);
+                        maxTemp, lowTemp, list_data.get(i));
                 dataModelArrayList.add(data);
             }
         }
@@ -150,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
 
     private String convertTemp(String temp)
     {
-        double doubleResult = Double.parseDouble(temp);
+        double doubleResult = Double.parseDouble(temp) + 0.5;
         int intResult = (int) doubleResult;
         String result = Integer.toString(intResult);
         return result;
@@ -179,7 +187,7 @@ public class MainActivity extends AppCompatActivity {
             String temp_max = td_data.getJSONObject("main").getString("temp_max");
             temp_max = convertTemp(temp_max) + "\u00B0";
             String temp_min = td_data.getJSONObject("main").getString("temp_min");
-            temp_min = convertTemp(temp_min) + "\u00B0";
+                temp_min = convertTemp(temp_min) + "\u00B0";
             tv_td_max.setText(temp_max);
             tv_td_low.setText(temp_min);
 
